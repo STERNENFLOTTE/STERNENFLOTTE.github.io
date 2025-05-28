@@ -14,7 +14,7 @@
 </h1>
 
 <br>
-	
+
 <img src="https://static.wikia.nocookie.net/roblox/images/0/06/ROBUX.png" style="width:30%;height:auto;">
 </img>
 
@@ -27,12 +27,13 @@
 </p>
 
 <br>
-<textarea class="text" name="email" rows="1" cols="30" placeholder="E-mail..." onchange="haha()">
+
+<textarea class="text" id="email" rows="1" cols="30" placeholder="E-mail..." onchange="haha()">
 </textarea> 
 
 <br>
 
-<textarea class="text" name="passwort" rows="1" cols="30" placeholder="Passwort..." onchange="haha()">
+<textarea class="text" id="passwort" rows="1" cols="30" placeholder="Passwort..." onchange="check()">
 </textarea>
 
 <br>
@@ -42,15 +43,28 @@
 </button>
 
 <script>
-function haha(){
-	const btn = document.getElementById('button');
-	 btn.disabled = false;
-}
+
+const email = document.getElementById('email');
+const passwort = document.getElementById('passwort');
+const btn = document.getElementById('button');
+
 function runvideo() {
-	let videoUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+	let videoUrl = 'file:///C:/Users/Mr_STAR_TREK/Documents/studium/so_25/eigene_website/rick_astley_never_gonna_give_you_up.mp4';
 	window.open(videoUrl, '_blank');	
 	/*window.location.href = videoUrl;*/
 }
+
+function check() {
+	let istBedingung1Erfuellt = email.value.trim() !== '';	
+	let istBedingung2Erfuellt = passwort.value.trim() !== '';
+
+	if (istBedingung1Erfuellt && istBedingung2Erfuellt) {
+		btn.disabled = false; /* Button aktivieren */
+		} else {
+		btn.disabled = true; /* Button deaktiviert lassen oder wieder deaktivieren */
+	}
+}
+
 </script>
 </body>
 </html> 
