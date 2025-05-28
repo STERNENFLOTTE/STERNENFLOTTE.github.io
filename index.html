@@ -50,7 +50,16 @@ const btn = document.getElementById('button');
 
 function runvideo() {
 	let videoUrl = 'roll.mp4';
-	window.open(videoUrl, '_blank');	
+	let win=window.open(videoUrl,'', '_blank');
+	win.document.write(`
+        	<html>
+            	<head><title>Video</title></head>
+            	<body>
+                	<video src="${videoUrl}"controls autoplay style="width:100%;height:auto;"></video>
+            	</body>
+        	</html>
+    `	);
+    	win.document.close();
 	/*window.location.href = videoUrl;*/
 }
 
